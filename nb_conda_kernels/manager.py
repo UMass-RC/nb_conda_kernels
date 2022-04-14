@@ -215,7 +215,7 @@ class CondaKernelSpecManager(KernelSpecManager):
                     self.log.error("[nb_conda_kernels] error loading %s:\n%s",
                                    spec_path, err)
                     continue
-                kernel_dir = dirname(spec_path).lower()
+                kernel_dir = dirname(spec_path)
                 kernel_name = raw_kernel_name = basename(kernel_dir)
                 if self.kernelspec_path is not None and kernel_name.startswith("conda-"):
                     self.log.debug("[nb_conda_kernels] Skipping kernel spec %s", spec_path)
